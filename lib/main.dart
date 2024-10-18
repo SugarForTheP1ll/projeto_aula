@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_aula/locais/Telalistalocais.dart';
-
 import 'episodios/Telalistaepisodios.dart';
 import 'personagens/telalistapersonagens.dart';
 
 void main() {
   runApp(MaterialApp(
     title: "Aplicativo do Rick & Morty",
-    home: Home(),
+    home: const Home(),
     theme: ThemeData(
       fontFamily: 'Rick and Morty Font',
       brightness: Brightness.dark,
@@ -16,7 +15,7 @@ void main() {
 }
 
 class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+  const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +26,7 @@ class Home extends StatelessWidget {
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment
-                .spaceEvenly, //Divides the extra space evenly between children and before and after the children.
+                .spaceEvenly, 
 
             children: [
               GestureDetector(
@@ -35,7 +34,7 @@ class Home extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => Telalistapersonagens()));
+                          builder: (context) => const Telalistapersonagens()));
                 },
                 child: Column(
                   children: [
@@ -49,22 +48,21 @@ class Home extends StatelessWidget {
                 ),
               ),
               GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => Telalistalocais()));
-                },
-                child: Column(
-                  children: [
-                    Image.asset(
-                      "images/locations.png",
-                      width: 120,
-                      height: 120,
-                    ),
-                    const Text("Locais", style: TextStyle(fontSize: 48))
-                  ],
-                ),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Telalistaepisodios(), 
+                          ));
+                    },
+                    child: Column(children: [
+                      Image.asset(
+                        "images/locations.png",
+                        width: 120,
+                        height: 120,
+                      ),
+                      const Text("Locais", style: TextStyle(fontSize: 48)),
+                    ]),
               ),
               GestureDetector(
                 onTap: () {

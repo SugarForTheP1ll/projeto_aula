@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class TableRowDetails extends StatelessWidget {
-  TableRowDetails({required this.title, required this.value});
+  const TableRowDetails({super.key, required this.title, required this.value});
 
   final String title, value;
 
@@ -12,12 +12,12 @@ class TableRowDetails extends StatelessWidget {
         Expanded(
           flex: 5,
           child: Container(
-            margin: EdgeInsets.all(4),
-            padding: EdgeInsets.all(16),
+            margin: const EdgeInsets.all(4),
+            padding: const EdgeInsets.all(16),
             color: Colors.blueGrey,
             child: Text(
               addNewLineCharacter(value),
-              style: TextStyle(fontSize: 24),
+              style: const TextStyle(fontSize: 24),
               textAlign: TextAlign.center,
               maxLines: 2,
             ),
@@ -26,12 +26,12 @@ class TableRowDetails extends StatelessWidget {
         Expanded(
           flex: 5,
           child: Container(
-            margin: EdgeInsets.all(4),
-            padding: EdgeInsets.all(16),
+            margin: const EdgeInsets.all(4),
+            padding: const EdgeInsets.all(16),
             color: Colors.blueGrey,
             child: Text(
               value,
-              style: TextStyle(fontSize: 24),
+              style: const TextStyle(fontSize: 24),
               textAlign: TextAlign.center,
               maxLines: 2,
             ),
@@ -45,7 +45,7 @@ class TableRowDetails extends StatelessWidget {
     if (result.length <= 23 && result.allMatches(' ').length <= 2) {
       return title;
     } else {
-      return title + '\n';
+      return '$title\n';
     }
   }
 }
